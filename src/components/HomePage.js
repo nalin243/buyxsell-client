@@ -1,7 +1,7 @@
 import BuyerCard from "./Homepage/BuyerCard"
 import SellerCard from "./Homepage/SellerCard"
-import Footer from "./Footer"
-import Header from "./Header"
+import Footer from "./Homepage/Footer"
+import Header from "./Homepage/Header"
 
 function HomePage(props){
 
