@@ -7,7 +7,7 @@ function HomePage(props){
 
 	return (
 
-		<div class="flex flex-col overflow-y-scroll background-page min-h-screen w-screen flex">
+		<div class="flex md:justify-end flex-col overflow-y-scroll background-page min-h-screen w-screen flex">
 			<Header/>
 			<div class="overflow-hidden  flex justify-center h-full">
 				<BuyerCard/>
