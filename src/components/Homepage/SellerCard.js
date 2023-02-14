@@ -8,7 +8,7 @@ function SellerCard(props){
 				<h1 class="heading-items ml-6 my-6">Seller</h1>
 			</div>
 				<div class="flex overflow-hidden  h-full">
-					<img  src={sellericon} class="scale-100 w-1/2 h-2/2  m-auto"/>
+					<img  src={sellericon} class="scale-100  w-1/2 h-2/2  m-auto"/>
 				</div>
 
 			<div class="flex justify-center  h-full">
