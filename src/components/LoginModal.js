@@ -11,7 +11,7 @@ function LoginModal(props){
 				<button onClick={()=>{
 					document.getElementById("login-modal").classList.toggle("hidden")
 				}}>
-				<img class="z-10 cancel-icon hover:cursor-pointer" src={cancelicon} class="h-5 w-5 mt-4 ml-4"/>
+				<img class="z-10 cancel-icon hover:cursor-pointer h-5 w-5 mt-4 ml-4" src={cancelicon}/>
 				</button>
 				<h1 class="m-auto product-name mt-6 text-6xl">Login</h1>				
 				<div class="flex flex-col justify-center h-full -mt-5">
@@ -21,7 +21,7 @@ function LoginModal(props){
 
 				<div class="flex flex-col justify-center h-full">
 					<button class="modal-button bg-white rounded-3xl px-12 py-3 m-auto mt-18">Login</button>
-					<h1 class="m-auto -mt-8 italic underline">New to BxS? Create Account</h1>
+					<h1 class="hover:cursor-pointer m-auto -mt-8 italic underline">New to BxS? Create Account</h1>
 				</div>
 			</div>
 		</div>
