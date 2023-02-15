@@ -12,7 +12,11 @@ function BuyerCard(props){
 			</div>
 
 			<div class="flex justify-center  h-full">
-				<button class="front-page-buttons my-16 px-14 py-2">Buy</button>
+				<button onClick={()=>{
+
+					document.getElementById("login-modal").classList.toggle("hidden")
+
+				}} class="front-page-buttons my-16 px-14 py-2">Buy</button>
 			</div>
 		</div>
 
