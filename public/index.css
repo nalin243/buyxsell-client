@@ -86,3 +86,12 @@
 .cancel-icon {
 	pointer-events:auto;
 }
+.buyer-page-pname {
+	font-family: 'Economica';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 200px;
+	line-height: 150px;
+
+	color: rgba(2, 95, 116, 0.8);
+}
