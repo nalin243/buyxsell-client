@@ -15,12 +15,13 @@ function LoginModal(props){
 
 	function handleLogin(){
 
-		const payload = {
+		const data = {
 			username: document.getElementById("username").value, 
-			password: document.getElementById("password").value
+			password: document.getElementById("password").value,
+			userType:props.loginUserType
 		}
 
-		axios.post(process.env.REACT_APP_SERVER_URL+"login",payload)
+		axios.post(process.env.REACT_APP_SERVER_URL+"login",data)
 			.then((response)=>{
 				if(response.data.sucess){
 					localStorage.setItem("userToken",response.data.token)
