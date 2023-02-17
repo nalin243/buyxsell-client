@@ -20,8 +20,13 @@ function LoginModal(props){
 				</div>
 
 				<div class="flex flex-col justify-center h-full">
-					<button class="modal-button bg-white rounded-3xl px-12 py-3 m-auto mt-18">Login</button>
-					<h1 class="hover:cursor-pointer m-auto -mt-8 italic underline">New to BxS? Create Account</h1>
+					<button class="modal-button rounded-3xl px-12 py-3 m-auto mt-18">Login</button>
+					<button class="hover:cursor-pointer m-auto -mt-8" onClick={()=>{
+						document.getElementById("register-modal").classList.toggle("hidden")
+						document.getElementById("login-modal").classList.toggle("hidden")
+					}}>
+						<h1 class="italic underline">New to BxS? Create Account</h1>
+					</button>
 				</div>
 			</div>
 		</div>
