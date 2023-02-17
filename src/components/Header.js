@@ -1,4 +1,7 @@
+import {useNavigate} from "react-router-dom"
 function Header(props){
+
+	const navigate = useNavigate()
 
 	if(props.homepage){
 		return (
@@ -21,6 +24,10 @@ function Header(props){
 						<h2 class="nav-items mr-20 my-auto">Most Popular</h2>
 						<h2 class="nav-items mr-20 my-auto">About Us</h2>
 						<h2 class="nav-items mr-20 my-auto">Profile</h2>
+						<button onClick={()=>{
+							localStorage.removeItem("userToken")
+							navigate("/home")
+						}}><h2 class="nav-items mr-20 my-auto">Log Out</h2></button>
 					</div>
 				</div>
 				)
