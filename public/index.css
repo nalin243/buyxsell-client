@@ -72,21 +72,15 @@
 	font-size: 20px;
 	line-height: 24px;
 
-	color: #000000;
+	background-color: #48A5BA;
+	color: white;
 	box-shadow: -15px 15px 30px rgba(0, 0, 0, 0.25);
-}
-
-.modal-text {
-	font-family: 'Inter';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 15px;
-	line-height: 18px;
 }
 
 .cancel-icon {
 	pointer-events:auto;
 }
+
 .buyer-page-pname {
 	font-family: 'Economica';
 	font-style: normal;
@@ -95,4 +89,8 @@
 	line-height: 150px;
 
 	color: rgba(2, 95, 116, 0.8);
+}
+
+.register-modal {
+	background-color: #48A5BA;
 }
