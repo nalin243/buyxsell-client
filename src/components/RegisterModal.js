@@ -3,8 +3,8 @@ const logoicon = require('../assets/logo.png')
 
 function RegisterModal(props) {
     return ( 
-        <div id="register-modal" class="fixed hidden backdrop-blur-sm z-10 justify-center inset-0 bg-black bg-opacity-50 overflow-y-auto h-full w-full">
-            <div class="flex flex-row modal-card relative m-auto mt-40 h-4/6 xl:w-2/4 sm:w-3/4">                
+        <div id="register-modal" class="fixed flex hidden backdrop-blur-sm z-10 justify-center inset-0 bg-black bg-opacity-50 overflow-y-auto h-full w-full">
+            <div class="flex flex-row modal-card relative m-auto h-5/6 xl:w-2/4 sm:w-3/4">                
 
                     <div class="flex flex-1 rounded-3xl flex-col h-full w-full register-modal">
                          <div class="flex flex-col register-modal rounded-3xl">
