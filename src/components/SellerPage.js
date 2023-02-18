@@ -1,13 +1,13 @@
 import Footer from "./Footer"
 import Header from "./Header"
-import DashBoard from "./Sellerpage/DashBoard";
+import SellerProfile from "./Sellerpage/SellerProfile";
 
 function SellerPage(props) {
     return ( 
         <div class="flex flex-col background-page min-h-screen w-screen flex">
             <Header page={"sellerpage"}/>
             <div class="flex flex-col justify-center h-screen w-screen">
-                <DashBoard/>
+                <SellerProfile/>
             </div>
             <Footer/>
         </div>
