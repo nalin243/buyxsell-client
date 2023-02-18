@@ -9,17 +9,17 @@ import {useState} from 'react'
 
 function HomePage(props){
 
-	const [loginUserType,updateLoginUserType] = useState("")
+	const [userType,updateUserType] = useState("")
 
 	return (
 
 		<div class="flex md:justify-end flex-col overflow-y-scroll background-page min-h-screen w-screen flex">
 			<Header page={"homepage"} />
-			<LoginModal loginUserType={loginUserType}/>
-			<RegisterModal/>
+			<LoginModal userType={userType}/>
+			<RegisterModal userType={userType}/>
 			<div class="overflow-hidden  flex justify-center h-full">
-				<BuyerCard updateLoginUserType={updateLoginUserType}/>
-				<SellerCard updateLoginUserType={updateLoginUserType}/>
+				<BuyerCard updateUserType={updateUserType}/>
+				<SellerCard updateUserType={updateUserType}/>
 			</div>
 			<Footer/>
 		</div>
