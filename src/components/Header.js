@@ -1,6 +1,13 @@
+const signouticon = require("../assets/signout.png")
+const logoicon = require('../assets/logo.png')
+
+import { useNavigate } from "react-router-dom"
+
 function Header(props){
 
-	if(props.homepage){
+	const navigate = useNavigate()
+
+	if(props.page==="homepage"){
 		return (
 
 			<div class="flex">
@@ -16,7 +23,7 @@ function Header(props){
 			</div>
 			)
 		}
-		else {
+		else if(props.page==="buyerpage") {
 			return (
 
 				<div class="flex">
@@ -28,6 +35,26 @@ function Header(props){
 					</div>
 				</div>
 				)
+		}
+		else if(props.page==="sellerpage") {
+			return (
+
+				<div class="flex z-10 sellerpage-bg w-full h-full">
+					<div class="flex justify-start pl-20 ml-5 w-1/2 h-full py-6">
+						<img onClick={()=>{
+							navigate("/home")
+						}} class="h-20 w-20 scale-150 -mt-2 hover:cursor-pointer" src={logoicon}/>
+					</div>
+					<div class="flex ml-8 mt-3 w-full justify-center">
+						<input type="search" id="default-search" class="flex bg-white-200 w-full p-3 pl-2 rounded-lg placeholder-gray-400 m-auto" placeholder="Search Account..." required/>
+					</div>
+					<div class="flex justify-end w-1/2">
+						<img class="hover:cursor-pointer pr-2 mt-11 pt-1 h-6 w-8" src={signouticon}/>
+						<h2 class="nav-items text-white mr-8 my-auto">Sign Out</h2>
+					</div>
+				</div>
+
+			)
 		}
 }
 

@@ -10,7 +10,7 @@ function HomePage(props){
 	return (
 
 		<div class="flex md:justify-end flex-col overflow-y-scroll background-page min-h-screen w-screen flex">
-			<Header homepage={true} />
+			<Header page={"homepage"} />
 			<LoginModal/>
 			<RegisterModal/>
 			<div class="overflow-hidden  flex justify-center h-full">
