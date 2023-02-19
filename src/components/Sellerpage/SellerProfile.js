@@ -63,6 +63,24 @@ function SellerProfile(props) {
                             </div>
                         </div>
 
+                        <div class="flex max-md:hidden h-1/6 w-full h-full">
+                            <div class="flex justify-center hover:cursor-pointer h-full w-full">
+                                <div class="m-auto h-10 w-10"></div>
+                            </div>
+                            <div class="flex justify-center h-full w-full">
+                                <h2 class="nav-items m-auto -ml-9 text-white text-2xl"></h2>
+                            </div>
+                        </div>
+
+                         <div class="flex max-md:hidden h-1/6 w-full h-full">
+                            <div class="flex justify-center hover:cursor-pointer h-full w-full">
+                                <div class="m-auto h-10 w-10"></div>
+                            </div>
+                            <div class="flex justify-center h-full w-full">
+                                <h2 class="nav-items m-auto -ml-9 text-white text-2xl"></h2>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
