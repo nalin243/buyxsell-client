@@ -103,8 +103,8 @@ function RegisterModal(props) {
                         <div class="flex flex-col  h-full w-full">
                             <div class="flex  flex-col justify-center">
                                 <div class="flex flex-col justify-center h-full -mt-5">
-                                    <input id="register-email" type="text" placeholder="Enter Username" class="modal-input w-inherit md:mx-9 xl:mx-12 border-b-4 rounded-sm border-black mt-20 mb-1"/>
-                                    <input id="register-username" type="text" placeholder="Enter Email-ID" class="modal-input w-inherit md:mx-9 xl:mx-12 border-b-4 rounded-sm border-black mt-12 mb-1"/>
+                                    <input id="register-username" type="text" placeholder="Enter Username" class="modal-input w-inherit md:mx-9 xl:mx-12 border-b-4 rounded-sm border-black mt-20 mb-1"/>
+                                    <input id="register-email" type="text" placeholder="Enter email ID" class="modal-input w-inherit md:mx-9 xl:mx-12 border-b-4 rounded-sm border-black mt-12 mb-1"/>
                                     <div class="flex flex-row">    
                                         <input id="register-first-name" type="text" placeholder="First Name" class="modal-input w-2/6 border-b-4 rounded-sm border-black mx-auto mr-1 mt-12 mb-5"/>
                                         <input id="register-last-name"  type="text" placeholder="Last Name" class="modal-input w-2/6 border-b-4 rounded-sm border-black mx-auto mt-8 mb-5"/>                                                                                       
