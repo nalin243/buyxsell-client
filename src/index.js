@@ -14,6 +14,7 @@ root.render(
 				<Route path="/home" element={<HomePage/>}></Route> 
 				<Route path="/buyer" element={<BuyerPage/>}></Route>
 				<Route path="/seller" element={<SellerPage/>}></Route>
+				{/* <Route path="/" element={<BuyerPage/>}></Route> */}
 			</Routes>
 		</BrowserRouter>
 	)

@@ -27,7 +27,7 @@ function Header(props){
 			return (
 
 				<div class="flex">
-					<h1 class="justify-start product-name ml-20 mt-10">BxS</h1>
+					<img class="justify-start mt-10 ml-10 w-70 h-60" src={logoicon}/>
 					<div class="flex pt-14 text-center justify-end w-full">
 						<h2 class="nav-items mr-20 my-auto">Most Popular</h2>
 						<h2 class="nav-items mr-20 my-auto">About Us</h2>
