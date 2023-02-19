@@ -27,7 +27,7 @@ function SellerProfile(props) {
                 <div class="flex-2 w-full h-full">
                     <div class="flex flex-col w-full h-full">
                         
-                        <div class="flex justify-center h-1/6 -mt-20 w-full h-full">
+                        <div class="flex justify-center h-1/6 w-full h-full">
                             <div class= "flex justify-center hover:cursor-pointer h-full w-full">
                                 <img class="m-auto h-8 w-8" src={dashicon}></img>
                             </div>
@@ -36,7 +36,7 @@ function SellerProfile(props) {
                             </div>
                         </div>
 
-                        <div class="flex -mt-56 justify-center h-1/6 w-full h-full">
+                        <div class="flex justify-center h-1/6 w-full h-full">
                             <div class="flex justify-center hover:cursor-pointer h-full w-full">
                                 <img class="m-auto h-10 w-10" src={dealicon}></img>
                             </div>
@@ -45,7 +45,7 @@ function SellerProfile(props) {
                             </div>
                         </div>
 
-                        <div class="flex -mt-56 h-1/6 w-full h-full">
+                        <div class="flex h-1/6 w-full h-full">
                             <div class="flex justify-center hover:cursor-pointer h-full w-full">
                                 <img class="m-auto h-10 w-10" src={settingicon}></img>
                             </div>
@@ -54,7 +54,7 @@ function SellerProfile(props) {
                             </div>
                         </div>
 
-                        <div class="flex -mt-56 h-1/6 w-full h-full">
+                        <div class="flex h-1/6 w-full h-full">
                             <div class="flex justify-center hover:cursor-pointer h-full w-full">
                                 <img class="m-auto h-10 w-10" src={feedbackicon}></img>
                             </div>
