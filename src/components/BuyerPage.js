@@ -1,4 +1,6 @@
 import SearchBar from "./Buyerpage/Searchbar"
+import SearchArea from "./Buyerpage/SearchArea"
+
 import Footer from "./Footer"
 import Header from "./Header"
 

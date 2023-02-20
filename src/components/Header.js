@@ -50,7 +50,7 @@ function Header(props){
 						}} class="h-20 w-20 scale-150 -mt-2 hover:cursor-pointer" src={logoicon}/>
 					</div>
 					<div class="flex ml-8 mt-3 w-full justify-center">
-						<input type="search" id="default-search" class="flex bg-gray-200 w-full p-3 pl-2 rounded-lg placeholder-gray-400 m-auto" placeholder="Search Account..." required/>
+						<input type="search" id="default-search" class="flex border border-gray-900 bg-gray-200 w-full p-3 pl-2 rounded-lg placeholder-gray-400 m-auto" placeholder="Search Account..." required/>
 					</div>
 					<div class="flex justify-end w-1/2">
 						<img class="hover:cursor-pointer pr-2 mt-10 pt-1 h-6 w-8" src={signouticon}/>
