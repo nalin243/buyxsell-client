@@ -1,3 +1,5 @@
+import axios from "axios"
+
 import Footer from "./Footer"
 import Header from "./Header"
 import SellerProfile from "./Sellerpage/SellerProfile"
@@ -9,9 +11,18 @@ function SellerPage(props) {
 
     const navigate = useNavigate()
 
-    useEffect(()=>{
-        if(!props.loginStatus)
-            navigate("/home")
+     useEffect(()=>{
+        if(!props.loginStatus){
+                axios.get(process.env.REACT_APP_SERVER_URL+"authcheck",{
+                headers: {
+                    Authorization: localStorage.getItem("userTokenSeller")
+                }
+            })
+            .then((response)=>{
+                if(!response.data.success)
+                    navigate("/home")
+            })
+        }
     })
         return ( 
             <div class="flex flex-col background-page min-h-screen w-screen flex">

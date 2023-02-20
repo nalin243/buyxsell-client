@@ -7,13 +7,24 @@ import Header from "./Header"
 import {useNavigate} from "react-router-dom"
 import {useEffect} from "react"
 
+import axios from "axios"
+
 function BuyerPage (props){
 
     const navigate = useNavigate()
 
     useEffect(()=>{
-        if(!props.loginStatus)
-            navigate("/home")
+        if(!props.loginStatus){
+                axios.get(process.env.REACT_APP_SERVER_URL+"authcheck",{
+                headers: {
+                    Authorization: localStorage.getItem("userTokenBuyer")
+                }
+            })
+            .then((response)=>{
+                if(!response.data.success)
+                    navigate("/home")
+            })
+        }
     })
 
         return(
