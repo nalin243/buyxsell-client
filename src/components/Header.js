@@ -33,7 +33,7 @@ function Header(props){
 						<h2 class="nav-items mr-20 my-auto">About Us</h2>
 						<h2 class="nav-items mr-20 my-auto">Profile</h2>
 						<button onClick={()=>{
-							localStorage.removeItem("userToken")
+							localStorage.removeItem("userTokenBuyer")
 							navigate("/home")
 						}}><h2 class="nav-items mr-20 my-auto">Log Out</h2></button>
 					</div>
@@ -54,7 +54,10 @@ function Header(props){
 					</div>
 					<div class="flex justify-end w-1/2">
 						<img class="hover:cursor-pointer pr-2 mt-10 pt-1 h-6 w-8" src={signouticon}/>
-						<h2 class="nav-items text-white mr-8 my-auto">SIGN OUT</h2>
+						<button onClick={()=>{
+							localStorage.removeItem("userTokenSeller")
+							navigate("/home")
+						}}><h2 class="nav-items text-white mr-8 my-auto">SIGN OUT</h2></button>
 					</div>
 				</div>
 

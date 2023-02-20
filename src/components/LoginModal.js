@@ -24,14 +24,18 @@ function LoginModal(props){
 		axios.post(process.env.REACT_APP_SERVER_URL+"login",data)
 			.then((response)=>{
 				if(response.data.success){
-					localStorage.setItem("userToken",response.data.token)
-					if(props.userType=="Buyer")
+					props.updateLoginStatus(true)
+					localStorage.setItem("userToken"+response.data.userType,response.data.token)
+					if(props.userType=="Buyer"){
 						navigate("/buyer?user="+response.data.user)
-					else if(props.userType==="Seller")
+					}
+					else if(props.userType==="Seller"){
 						navigate("/seller?user="+response.data.user)
+					}
 				}
 			})
 			.catch((err)=>{
+				props.updateLoginStatus(false)
 				if(!err.response.data.success){
 					updateLoginStatus(err.response.data.message+"!")
 				}
