@@ -28,7 +28,7 @@ function SellerProfile(props) {
         <div class="flex overflow-hidden w-full h-full">
             <div class="flex sellerpage-bg flex-col xl:w-2/12 md:w-2/6 h-full">
                 
-                <div class="flex-1 mt-28 w-full h-full">
+                <div class="flex-1 mt-10 mb-10 w-full h-full">
                     <div class="flex flex-col h-full w-full">
                         <div class="flex m-2">
                             <img class="m-auto -mt-12 scale-50" src={pfpicon}></img>

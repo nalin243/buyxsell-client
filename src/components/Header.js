@@ -1,4 +1,4 @@
-const signouticon = require("../assets/signout.png")
+const signouticon = require("../assets/logout.png")
 const logoicon = require('../assets/logo.png')
 
 import { useNavigate } from "react-router-dom"
@@ -53,11 +53,11 @@ function Header(props){
 						<input type="search" id="default-search" class="flex border border-gray-900 bg-gray-200 w-full p-3 pl-2 rounded-lg placeholder-gray-400 m-auto" placeholder="Search Account..." required/>
 					</div>
 					<div class="flex justify-end w-1/2">
-						<img class="hover:cursor-pointer pr-2 mt-10 pt-1 h-6 w-8" src={signouticon}/>
+						<img class="hover:cursor-pointer pr-2 mr-2 mt-11 h-5 w-7" src={signouticon}/>
 						<button onClick={()=>{
 							localStorage.removeItem("userTokenSeller")
 							navigate("/home")
-						}}><h2 class="nav-items text-white mr-8 my-auto">SIGN OUT</h2></button>
+						}}><h2 class="nav-items text-black mr-8 my-auto">Sign Out</h2></button>
 					</div>
 				</div>
 
