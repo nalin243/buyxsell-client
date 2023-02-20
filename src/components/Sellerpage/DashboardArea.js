@@ -3,7 +3,7 @@ const uploadImg = require("../../assets/upload.png")
 function DashboardArea(props){
     return (
         <div class="flex justify-center h-full w-full">
-            <div class="flex flex-row m-auto border-4 border-black stage-area h-5/6 w-11/12">
+            <div class="flex flex-row m-auto border-1 border-black stage-area h-5/6 w-11/12">
                 <div class="flex flex-col h-full w-full">
                     <div class="flex justify-end h-full w-full">
                         <img class="m-auto mt-36 hover:cursor-pointer" src={uploadImg}/>
