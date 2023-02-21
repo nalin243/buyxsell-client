@@ -17,11 +17,12 @@ function SearchArea(props){
 					<img src={searchicon} class="h-10 w-10 hover:cursor-pointer -ml-10 mt-5 mr-12"/>
 			</div>
 			<div class="relative flex overflow-y-scroll flex-wrap h-screen w-screen">
-			<ItemCard/>
-			<ItemCard/>
-			<ItemCard/>
-			<ItemCard/>
-			<ItemCard/>
+			<ItemCard comploc={"buyer"}/>
+			<ItemCard comploc={"buyer"}/>
+			<ItemCard comploc={"buyer"}/>
+			<ItemCard comploc={"buyer"}/>
+			<ItemCard comploc={"buyer"}/>
+			<ItemCard comploc={"buyer"}/>
 			</div>
 
 		</div>

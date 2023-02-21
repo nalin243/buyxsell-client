@@ -13,19 +13,19 @@ function BuyerPage (props){
 
     const navigate = useNavigate()
 
-    useEffect(()=>{
-        if(!props.loginStatus){
-                axios.get(process.env.REACT_APP_SERVER_URL+"authcheck",{
-                headers: {
-                    Authorization: localStorage.getItem("userTokenBuyer")
-                }
-            })
-            .then((response)=>{
-                if(!response.data.success)
-                    navigate("/home")
-            })
-        }
-    })
+    // useEffect(()=>{
+    //     if(!props.loginStatus){
+    //             axios.get(process.env.REACT_APP_SERVER_URL+"authcheck",{
+    //             headers: {
+    //                 Authorization: localStorage.getItem("userTokenBuyer")
+    //             }
+    //         })
+    //         .then((response)=>{
+    //             if(!response.data.success)
+    //                 navigate("/home")
+    //         })
+    //     }
+    // })
 
         return(
             <div class="flex flex-col background-page min-h-screen w-screen flex">
