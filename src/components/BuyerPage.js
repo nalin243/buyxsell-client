@@ -13,6 +13,7 @@ function BuyerPage (props){
 
     const navigate = useNavigate()
     const [loading,updateLoading] = useState(true)
+    const [username,updateUsername] = useState("")
  
     useEffect(()=>{
         if(!props.loginStatus){
@@ -24,8 +25,10 @@ function BuyerPage (props){
             .then((response)=>{
                 if(!response.data.success)
                     navigate("/home")
-                else
+                else{
+                    updateUsername(response.data.user)
                     updateLoading(false)
+                }
             })
             .catch((err)=>{
                 if(err.response.data==="Unauthorized")

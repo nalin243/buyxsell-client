@@ -7,15 +7,11 @@ import SellerProfile from "./Sellerpage/SellerProfile"
 import {useNavigate} from "react-router-dom"
 import {useEffect,useState} from "react"
 
-import url from "url"
-import querystring from "querystring"
-
 function SellerPage(props) {
 
     const navigate = useNavigate()
     const [loading,updateLoading] = useState(true)
-
-    const username = querystring.parse(url.parse(document.URL).query).user
+    const [username,updateUsername] = useState("")
 
     useEffect(()=>{
         if(!props.loginStatus){
@@ -27,8 +23,10 @@ function SellerPage(props) {
             .then((response)=>{
                 if(!response.data.success)
                     navigate("/home")
-                else
+                else{
+                    updateUsername(response.data.user)
                     updateLoading(false)
+                }
             })
             .catch((err)=>{
                 if(err.response.data==="Unauthorized")
