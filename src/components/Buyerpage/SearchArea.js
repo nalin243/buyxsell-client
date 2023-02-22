@@ -1,7 +1,7 @@
 const backicon = require("../../assets/arrow-left.png")
 const searchicon = require('../../assets/market.png')
 
-import ItemCard from "./ItemCard"
+import ItemCard from "../ItemCard"
 import Searchbar from "./Searchbar"
 
 function SearchArea(props){

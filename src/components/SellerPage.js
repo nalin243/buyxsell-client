@@ -7,10 +7,15 @@ import SellerProfile from "./Sellerpage/SellerProfile"
 import {useNavigate} from "react-router-dom"
 import {useEffect,useState} from "react"
 
+import url from "url"
+import querystring from "querystring"
+
 function SellerPage(props) {
 
     const navigate = useNavigate()
     const [loading,updateLoading] = useState(true)
+
+    const username = querystring.parse(url.parse(document.URL).query).user
 
     useEffect(()=>{
         if(!props.loginStatus){
@@ -40,7 +45,7 @@ function SellerPage(props) {
                 <div class="flex flex-col background-page min-h-screen w-screen flex">
                     <Header page={"sellerpage"}/>
                     <div class="flex flex-col justify-center h-screen w-screen">
-                        <SellerProfile/>
+                        <SellerProfile user={username}/>
                     </div>
                     <Footer/>
                 </div>

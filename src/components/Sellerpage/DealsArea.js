@@ -1,6 +1,34 @@
-import ItemCard from "../Buyerpage/ItemCard";
+import ItemCard from "../ItemCard";
+
+import axios from "axios"
+import {useEffect,useState} from "react"
+import url from "url"
+import querystring from "querystring"
 
 function DealsArea(props){
+
+    const [deals,updateDeals] = useState(null)
+    const [totalItemsSold,updateTotalItemsSold] = useState(0)
+    const [totalSales,updateTotalSales] = useState(0)
+
+    const username = querystring.parse(url.parse(document.URL).query).user
+
+    useEffect(()=>{
+        axios.get(process.env.REACT_APP_SERVER_URL+"item?searchby=sellername&sellername="+username,{
+            headers: {
+                Authorization: localStorage.getItem("userTokenSeller")
+            }
+        })
+        .then((response)=>{
+            updateTotalItemsSold(response.data.length)
+            updateTotalSales(response.data.reduce((sum,item)=>{
+                return sum+item.price
+            },0))
+            updateDeals((response.data).map((item)=>{
+                return <ItemCard comploc={"seller"} name={item.name} description={item.description} soldto={item.soldto} price={item.price} />
+            })) 
+        })
+    })
     return (
         <div class="flex flex-col h-full w-full">
             <div class="flex flex-row  mt-10 m-auto h-5/6 w-11/12">
@@ -9,7 +37,7 @@ function DealsArea(props){
                         <h1 class="product-name m-auto text-5xl">Total Items Sold</h1>
                     </div>
                     <div class="flex flex-2  h-full w-full">
-                    
+                        <h1 class="product-name m-auto text-5xl">{totalItemsSold}</h1>
                     </div>
                 </div>
                 <div class="flex flex-col m-5 stage-area h-5/6 w-6/12">
@@ -17,7 +45,7 @@ function DealsArea(props){
                         <h1 class="product-name m-auto text-5xl">Total Sales</h1>
                     </div>
                     <div class="flex flex-2  h-full w-full">
-                    
+                        <h1 class="product-name m-auto text-5xl">{totalSales}</h1>
                     </div>
                 </div>
             </div>
@@ -25,12 +53,7 @@ function DealsArea(props){
                 <h1 class="product-name text-6xl">Previous Sales</h1>
             </div>
             <div class="flex overflow-x-scroll h-full w-full">
-                <ItemCard comploc={"seller"}/>
-                <ItemCard comploc={"seller"}/>
-                <ItemCard comploc={"seller"}/>
-                <ItemCard comploc={"seller"}/>
-                <ItemCard comploc={"seller"}/>
-                <ItemCard comploc={"seller"}/>
+                {deals}
             </div>
 
         </div>

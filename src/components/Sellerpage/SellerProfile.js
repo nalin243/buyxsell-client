@@ -30,14 +30,11 @@ function SellerProfile(props) {
                 
                 <div class="flex-1 mt-10 mb-10 w-full h-full">
                     <div class="flex flex-col h-full w-full">
-                        <div class="flex m-2">
+                        <div class="flex m-2 mb-6">
                             <img class="m-auto -mt-12 scale-50" src={pfpicon}></img>
                         </div>
-                        <div class="flex -mt-16 justify-center">
-                            <h1 class="dashboard-text">.....</h1>
-                        </div>
-                        <div class="flex -mt-15 p-3 justify-center">
-                            <h1 class="dashboard-text">Subhayan Majumder</h1>
+                        <div class="flex -mt-20 p-3 justify-center">
+                            <h1 class="dashboard-text">{props.user}</h1>
                         </div>
                     </div>            
                 </div>
