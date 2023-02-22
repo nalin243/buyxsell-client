@@ -12,6 +12,7 @@ function SellerPage(props) {
     const navigate = useNavigate()
     const [loading,updateLoading] = useState(true)
 
+    useEffect(()=>{
         if(!props.loginStatus){
                 axios.get(process.env.REACT_APP_SERVER_URL+"authcheck",{
                 headers: {
@@ -21,12 +22,18 @@ function SellerPage(props) {
             .then((response)=>{
                 if(!response.data.success)
                     navigate("/home")
+                else
+                    updateLoading(false)
             })
             .catch((err)=>{
                 if(err.response.data==="Unauthorized")
                     navigate("/home")
             })
         }
+        else {
+            updateLoading(false)
+        }
+    })
 
         if(!loading){
             return ( 

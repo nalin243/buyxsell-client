@@ -14,6 +14,7 @@ function BuyerPage (props){
     const navigate = useNavigate()
     const [loading,updateLoading] = useState(true)
  
+    useEffect(()=>{
         if(!props.loginStatus){
                 axios.get(process.env.REACT_APP_SERVER_URL+"authcheck",{
                 headers: {
@@ -31,6 +32,10 @@ function BuyerPage (props){
                     navigate("/home")
             })
         }
+        else {
+            updateLoading(false)
+        }
+    })
  
         if(!loading){
             return(
