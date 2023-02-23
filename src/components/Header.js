@@ -28,9 +28,13 @@ function Header(props){
 
 				<div class="flex">
 					<img class="justify-start md:mt-2 md:-ml-1 xl:mt-4 xl:ml-7 w-50 h-40" src={logoicon}/>
+					<div class="h-1/2 w-1/2">
+					<h1 class="product-name text-3xl mt-24">Hi, {props.user}</h1>
+					</div>
 					<div class="flex pt-14 text-center justify-end w-full">
-						<h2 class="nav-items mr-20 my-auto">Most Popular</h2>
-						<h2 class="nav-items mr-20 my-auto">About Us</h2>
+						<button onClick={()=>{
+							navigate("/buyer/cart")
+						}}><h2 class="nav-items mr-20 my-auto">My Cart</h2></button>
 						<h2 class="nav-items mr-20 my-auto">Profile</h2>
 						<button onClick={()=>{
 							localStorage.removeItem("userTokenBuyer")
@@ -62,6 +66,29 @@ function Header(props){
 				</div>
 
 			)
+		}
+
+		else if(props.page==="cartpage"){
+			return (
+
+				<div class="flex">
+					<img class="justify-start md:mt-2 md:-ml-1 xl:mt-4 xl:ml-7 w-50 h-40" src={logoicon}/>
+					<div class="h-1/2 w-1/2">
+					<h1 class="product-name text-3xl mt-24">Hi, {props.user}</h1>
+					</div>
+					<div class="flex pt-14 text-center justify-end w-full">
+						<h2 class="nav-items mr-20 my-auto">Profile</h2>
+						<button onClick={()=>{
+							navigate("/buyer")
+						}}><h2 class="nav-items mr-20 my-auto">Search</h2></button>
+						<button onClick={()=>{
+							localStorage.removeItem("userTokenBuyer")
+							navigate("/home")
+						}}><h2 class="nav-items mr-20 my-auto">Log Out</h2></button>
+					</div>
+				</div>
+
+				)
 		}
 }
 
