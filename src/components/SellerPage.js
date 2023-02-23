@@ -11,7 +11,6 @@ function SellerPage(props) {
 
     const navigate = useNavigate()
     const [loading,updateLoading] = useState(true)
-    const [username,updateUsername] = useState("")
 
     useEffect(()=>{
         if(!props.loginStatus){
@@ -24,7 +23,7 @@ function SellerPage(props) {
                 if(!response.data.success)
                     navigate("/home")
                 else{
-                    updateUsername(response.data.user)
+                    props.updateUser(response.data.user)
                     updateLoading(false)
                 }
             })
@@ -43,7 +42,7 @@ function SellerPage(props) {
                 <div class="flex flex-col background-page min-h-screen w-screen flex">
                     <Header page={"sellerpage"}/>
                     <div class="flex flex-col justify-center h-screen w-screen">
-                        <SellerProfile user={username}/>
+                        <SellerProfile user={props.user}/>
                     </div>
                     <Footer/>
                 </div>

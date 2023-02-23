@@ -13,11 +13,12 @@ function AuthCheck(props){
 		})
 		.then((response)=>{
 			props.updateLoginStatus(true)
+			props.updateUser(response.data.user)
 			if(response.data.userType==="Buyer"){
-				navigate("/buyer?user="+response.data.user)
+				navigate("/buyer")
 			}
 			else if(response.data.userType==="Seller"){
-				navigate("/seller?user="+response.data.user)
+				navigate("/seller")
 			}
 		})
 		.catch((err)=>{
@@ -29,11 +30,12 @@ function AuthCheck(props){
 			})
 				.then((response)=>{
 					props.updateLoginStatus(true)
+					props.updateUser(response.data.user)
 					if(response.data.userType==="Buyer"){
-						navigate("/buyer?user="+response.data.user)
+						navigate("/buyer")
 					}
 					else if(response.data.userType==="Seller"){
-						navigate("/seller?user="+response.data.user)
+						navigate("/seller")
 					}
 				})
 

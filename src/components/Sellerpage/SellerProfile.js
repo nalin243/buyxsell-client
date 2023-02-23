@@ -19,9 +19,9 @@ function SellerProfile(props) {
 
     const ProfileNavItems = {}
     ProfileNavItems["Dashboard"] = <DashboardArea user={props.user}/>
-    ProfileNavItems["Deals"] = <DealsArea/>
-    ProfileNavItems["Settings"] = <SettingsArea/>
-    ProfileNavItems["Feedback"] = <FeedbackArea/>
+    ProfileNavItems["Deals"] = <DealsArea user={props.user}/>
+    ProfileNavItems["Settings"] = <SettingsArea user={props.user}/>
+    ProfileNavItems["Feedback"] = <FeedbackArea user={props.user}/>
 
 
     return ( 

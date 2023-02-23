@@ -25,12 +25,13 @@ function LoginModal(props){
 			.then((response)=>{
 				if(response.data.success){
 					props.updateLoginStatus(true)
+					props.updateUser(response.data.user)
 					localStorage.setItem("userToken"+response.data.userType,response.data.token)
 					if(props.userType=="Buyer"){
-						navigate("/buyer?user="+response.data.user)
+						navigate("/buyer")
 					}
 					else if(props.userType==="Seller"){
-						navigate("/seller?user="+response.data.user)
+						navigate("/seller")
 					}
 				}
 			})

@@ -15,7 +15,7 @@ function HomePage(props){
 
 		<div class="flex md:justify-end flex-col overflow-y-scroll background-page min-h-screen w-screen flex">
 			<Header page={"homepage"} />
-			<LoginModal updateUserType={props.updateUserType} updateLoginStatus={props.updateLoginStatus} userType={userType}/>
+			<LoginModal updateUser={props.updateUser} updateUserType={props.updateUserType} updateLoginStatus={props.updateLoginStatus} userType={userType}/>
 			<RegisterModal userType={userType}/>
 			<div class="overflow-hidden  flex justify-center h-full">
 				<BuyerCard updateUserType={updateUserType}/>

@@ -24,8 +24,14 @@ function DashboardArea(props){
                  }
              })
                 .then((response)=>{
-                     alert("Item put on shop!")
+                    alert("Item put on shop!")
+                    document.getElementById("item-name").value = ""
+                    document.getElementById("item-price").value = ""
+                    document.getElementById("item-description").value = ""
                  })
+                .catch((err)=>{
+                    alert(err.response.data.message)
+                })
         })
         },[])
 

@@ -2,8 +2,6 @@ import ItemCard from "../ItemCard";
 
 import axios from "axios"
 import {useEffect,useState} from "react"
-import url from "url"
-import querystring from "querystring"
 
 function DealsArea(props){
 
@@ -11,10 +9,10 @@ function DealsArea(props){
     const [totalItemsSold,updateTotalItemsSold] = useState(0)
     const [totalSales,updateTotalSales] = useState(0)
 
-    const username = querystring.parse(url.parse(document.URL).query).user
+    console.log(props.user)
 
     useEffect(()=>{
-        axios.get(process.env.REACT_APP_SERVER_URL+"item?searchby=sellername&sellername="+username,{
+        axios.get(process.env.REACT_APP_SERVER_URL+"item?searchby=sellername&sellername="+props.user,{
             headers: {
                 Authorization: localStorage.getItem("userTokenSeller")
             }
@@ -52,7 +50,7 @@ function DealsArea(props){
             <div class="flex ml-20 h-40 w-80">
                 <h1 class="product-name text-6xl">Previous Sales</h1>
             </div>
-            <div class="flex overflow-x-scroll h-full w-full">
+            <div class="flex overflow-x-scroll h-inherit min-w-full">
                 {deals}
             </div>
 

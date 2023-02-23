@@ -9,14 +9,15 @@ import {useState} from "react"
 function App(props){
 
 	const [loginStatus,updateLoginStatus] = useState(false)
+	const [user,updateUser] = useState("")
 
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element = {<AuthCheck updateLoginStatus={updateLoginStatus}/>}></Route>
-				<Route path="/home" element={<HomePage updateLoginStatus={updateLoginStatus}/>}></Route> 
-				<Route path="/buyer" element={<BuyerPage loginStatus={loginStatus}/>}></Route>
-				<Route path="/seller" element={<SellerPage loginStatus={loginStatus}/>}></Route>
+				<Route path="/" element = {<AuthCheck updateUser={updateUser} updateLoginStatus={updateLoginStatus}/>}></Route>
+				<Route path="/home" element={<HomePage updateUser={updateUser} updateLoginStatus={updateLoginStatus}/>}></Route> 
+				<Route path="/buyer" element={<BuyerPage updateUser={updateUser} user={user} loginStatus={loginStatus}/>}></Route>
+				<Route path="/seller" element={<SellerPage updateUser={updateUser} user={user} loginStatus={loginStatus}/>}></Route>
 			</Routes>
 		</BrowserRouter>
 	)
