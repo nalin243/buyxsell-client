@@ -18,7 +18,7 @@ function SellerProfile(props) {
     const [currentItem,updateCurrentItem]  = useState("Dashboard")
 
     const ProfileNavItems = {}
-    ProfileNavItems["Dashboard"] = <DashboardArea/>
+    ProfileNavItems["Dashboard"] = <DashboardArea user={props.user}/>
     ProfileNavItems["Deals"] = <DealsArea/>
     ProfileNavItems["Settings"] = <SettingsArea/>
     ProfileNavItems["Feedback"] = <FeedbackArea/>
