@@ -21,7 +21,7 @@ function CartCard(props){
 						<h1 class="product-name text-4xl mr-5 font-medium mt-4">Rs {props.price}</h1>
 					</div>
 				</div>
-				<div class="flex  text-justify h-full w-full">
+				<div class="flex  text-start h-full w-full">
 					<h1 class="product-name font-medium text-4xl ml-5 mt-10">{props.description}</h1>
 				</div>
 			</div>

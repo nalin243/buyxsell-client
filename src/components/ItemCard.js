@@ -1,6 +1,27 @@
 const carticon = require('./../assets/shopping-cart-white.png')
 
+import axios from "axios"
+
 function ItemCard(props){
+
+	const item = {
+		name: props.name,
+		price: props.price,
+		description:props.description,
+		user: props.user,
+		sellername: props.sellername
+	}
+
+	function addToCart(){
+		axios.put(process.env.REACT_APP_SERVER_URL+"addtocart",item,{
+			headers:{
+				Authorization: localStorage.getItem("userTokenBuyer")
+			}
+		})
+			.then((response)=>{
+				alert("Added to cart")
+			})
+	}
 
 	if (props.comploc==="buyer"){
 
@@ -25,7 +46,7 @@ function ItemCard(props){
 					</div>
 
 					<div class="flex justify-center mt-2 mb-5">
-						<div class="flex hover:cursor-pointer justify-end bg-black -mt-2 py-3 rounded-md w-3/6 ">
+						<div onClick={addToCart} class="flex hover:cursor-pointer justify-end bg-black -mt-2 py-3 rounded-md w-3/6 ">
 							<h1 class="mr-4 text-white">Add to cart</h1>
 							<img class="h-6 w-6 mr-8" src={carticon}/>
 						</div>

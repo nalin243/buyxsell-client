@@ -43,7 +43,7 @@ function BuyerPage (props){
                     <h1 class="flex m-auto -mb-22 justify-center buyer-page-pname ml-auto mt-auto">BUYxSELL</h1>
                         <SearchBar/>
                     </div>
-                    <SearchArea/>
+                    <SearchArea user={username}/>
                     <Footer/>
                 </div>
             )

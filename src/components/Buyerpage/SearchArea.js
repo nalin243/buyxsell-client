@@ -20,7 +20,7 @@ function SearchArea(props){
 			.then((response)=>{
 				if(response.data.success){
 					updateShop((response.data.shop).map((item)=>{
-						return <ItemCard comploc={"buyer"} name={item.name} price={item.price} description={item.description}/>
+						return <ItemCard comploc={"buyer"} sellername={item.sellername} user={props.user} name={item.name} price={item.price} description={item.description}/>
 					}))
 				}
 			})
@@ -35,7 +35,7 @@ function SearchArea(props){
 						.then((response)=>{
 							if(response.data.success){
 								updateShop((response.data.shop).map((item)=>{
-									return <ItemCard comploc={"buyer"} name={item.name} price={item.price} description={item.description}/>
+									return <ItemCard comploc={"buyer"} sellername={item.sellername} user={props.user} name={item.name} price={item.price} description={item.description}/>
 								}))
 							}
 						})
