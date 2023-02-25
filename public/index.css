@@ -125,5 +125,6 @@ input:focus {
 }
 
 .item-card {
-	background-color:#48A5BA;
+/*	background-color:#48A5BA;*/
+	background-color:#FFF5EE;
 }
