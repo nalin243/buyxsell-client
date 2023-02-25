@@ -44,18 +44,18 @@ function SellerProfile(props) {
                         
                         <div onClick={()=>{
                             updateCurrentItem("Dashboard")
-                        }}class="flex justify-center h-1/6 w-full h-full">
+                        }}class="flex bg-slate-200 justify-center h-1/6 w-full h-full">
                             <div class= "flex justify-center hover:cursor-pointer h-full w-full">
                                 <img class="m-auto h-8 w-8" src={dashicon}></img>
                             </div>
-                            <div class="flex justify-center h-full w-full">
+                            <div class="flex justify-center  h-full w-full">
                                 <h2 class="nav-items m-auto -ml-9 text-black text-xl">Dashboard</h2>
                             </div>
                         </div>
 
                         <div onClick={()=>{
                             updateCurrentItem("Deals")
-                        }} class="flex justify-center h-1/6 w-full h-full">
+                        }} class="flex justify-center  h-1/6 w-full h-full">
                             <div class="flex justify-center hover:cursor-pointer h-full w-full">
                                 <img class="m-auto h-10 w-10" src={dealicon}></img>
                             </div>
@@ -66,7 +66,7 @@ function SellerProfile(props) {
 
                         <div onClick={()=>{
                             updateCurrentItem("Settings")
-                        }} class="flex h-1/6 w-full h-full">
+                        }} class="flex h-1/6 bg-slate-200 w-full h-full">
                             <div class="flex justify-center hover:cursor-pointer h-full w-full">
                                 <img class="m-auto h-10 w-10" src={settingicon}></img>
                             </div>
@@ -77,7 +77,7 @@ function SellerProfile(props) {
 
                         <div onClick={()=>{
                             updateCurrentItem("Feedback")
-                        }} class="flex h-1/6 w-full h-full">
+                        }} class="flex h-1/6   w-full h-full">
                             <div class="flex justify-center hover:cursor-pointer h-full w-full">
                                 <img class="m-auto h-10 w-10" src={feedbackicon}></img>
                             </div>

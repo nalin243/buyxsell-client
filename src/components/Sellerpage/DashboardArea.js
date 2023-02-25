@@ -56,13 +56,13 @@ function DashboardArea(props){
                         <h1 class="m-auto product-name text-4xl">Product Details</h1>
                     </div>
                     <div class="flex h-full w-full">
-                        <input id="item-name" type="text" placeholder="Item Name..." class="stage-input w-5/6 p-3 rounded-md m-auto"/>
+                        <input id="item-name" type="text" placeholder="Item Name..." class=" text-white stage-input  w-5/6 p-3 rounded-md m-auto"/>
                     </div>
                     <div class="flex h-full w-full mt-2">
-                        <textarea id="item-description" rows="10" type="text" placeholder="Item Description..." class="stage-input w-5/6 h-6/6 p-6 rounded-md m-auto"/>
+                        <textarea id="item-description" rows="10" type="text" placeholder="Item Description..." class="text-white stage-input w-5/6 h-6/6 p-6 rounded-md m-auto"/>
                     </div>
                     <div class="flex mt-2 h-full w-full">
-                        <input id="item-price" type="number" placeholder="Price..." class="stage-input w-2/6 p-3 ml-16 rounded-md m-auto"/>
+                        <input id="item-price" type="number" placeholder="Rs 100" class="stage-input text-white w-2/6 p-3 ml-16 rounded-md m-auto"/>
                     </div>
                     <div class="flex flex-row h-full w-full">
                         <div class="flex h-full w-full">
