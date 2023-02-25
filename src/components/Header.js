@@ -33,7 +33,7 @@ function Header(props){
 					</div>
 					<div class="flex pt-14 text-center justify-end w-full">
 						<button onClick={()=>{
-							navigate("/buyer/cart")
+							navigate("/cart")
 						}}><h2 class="nav-items mr-20 my-auto">My Cart</h2></button>
 						<h2 class="nav-items mr-20 my-auto">Profile</h2>
 						<button onClick={()=>{

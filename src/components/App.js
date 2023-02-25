@@ -19,7 +19,7 @@ function App(props){
 				<Route path="/home" element={<HomePage updateUser={updateUser} updateLoginStatus={updateLoginStatus}/>}></Route> 
 				<Route path="/buyer" element={<BuyerPage updateUser={updateUser} user={user} loginStatus={loginStatus}/>}></Route>
 				<Route path="/seller" element={<SellerPage updateUser={updateUser} user={user} loginStatus={loginStatus}/>}></Route>
-				<Route path="/buyer/cart" element={<Cart updateUser={updateUser} user={user} loginStatus={loginStatus} updateLoginStatus={updateLoginStatus} />}></Route>
+				<Route path="/cart" element={<Cart updateUser={updateUser} user={user} loginStatus={loginStatus} updateLoginStatus={updateLoginStatus} />}></Route>
 			</Routes>
 		</BrowserRouter>
 	)

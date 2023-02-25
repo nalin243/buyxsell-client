@@ -14,15 +14,15 @@ function CartCard(props){
 			<div class="flex flex-col  h-full w-full">
 				<div class="flex  h-2/6 w-full">
 					<div class="text-start w-full">
-						<h1 class="product-name text-4xl ml-5 mt-4">Wardrobe</h1>
+						<h1 class="product-name text-4xl ml-5 mt-4">{props.name}</h1>
 					</div>
 
 					<div class="text-end w-full">
-						<h1 class="product-name text-4xl mr-5 mt-4">Rs 989</h1>
+						<h1 class="product-name text-4xl mr-5 font-medium mt-4">Rs {props.price}</h1>
 					</div>
 				</div>
 				<div class="flex  text-justify h-full w-full">
-					<h1 class="product-name text-4xl ml-5 mt-10">Randoma jldjalkfjklajfklajsfkljakljflkdajfljdaslfjklasjfklajsdf</h1>
+					<h1 class="product-name font-medium text-4xl ml-5 mt-10">{props.description}</h1>
 				</div>
 			</div>
 		</div>

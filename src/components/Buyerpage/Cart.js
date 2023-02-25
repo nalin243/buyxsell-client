@@ -11,10 +11,13 @@ import {useNavigate} from "react-router-dom"
 function Cart(props){
 	const navigate = useNavigate()
     const [loading,updateLoading] = useState(true)
+    const [cart,updateCart] = useState(null)
+    const [total,updateTotal] = useState(0)
+    const [itemCount,updateItemCount] = useState(0)
+    const [user,updateUser] = useState("")
 
     useEffect(()=>{
-        if(!props.loginStatus){
-                axios.get(process.env.REACT_APP_SERVER_URL+"authcheck",{
+      axios.get(process.env.REACT_APP_SERVER_URL+"authcheck",{
                 headers: {
                     Authorization: localStorage.getItem("userTokenBuyer")
                 }
@@ -23,25 +26,36 @@ function Cart(props){
                 if(!response.data.success)
                     navigate("/home")
                 else{
-                	console.log("it was success ")
-                    props.updateUser(response.data.user)
+                    updateUser(response.data.user)
                     updateLoading(false)
+                      axios.get(process.env.REACT_APP_SERVER_URL+"cart?user="+response.data.user,{
+                    	headers: {
+                    		Authorization: localStorage.getItem("userTokenBuyer")
+                    	}
+                    })
+                    	.then((response)=>{
+                    		if(response.data.success){
+                    			updateItemCount(response.data.cart.length)
+                    			updateTotal(response.data.cart.reduce((total,item)=>{
+                    				return total+item.price
+                    			},0) )
+                    			updateCart((response.data.cart).map((item)=>{
+                    				return <CartCard name={item.name} price={item.price} description={item.description}/>
+                    			}))
+                    		}
+                    	})
                 }
             })
             .catch((err)=>{
                 if(err.response.data==="Unauthorized")
                     navigate("/home")
             })
-        }
-        else {
-            updateLoading(false)
-        }
-    })
+    },[])
 
     if(!loading){
     return (
     	<div class="flex flex-col background-page min-h-screen w-screen flex">
-    		<Header user={props.user} page={"cartpage"}/>
+    		<Header user={user} page={"cartpage"}/>
 	    		<div class="flex justify-center h-screen w-screen mt-10">
 
 	    			<div class="modal-card flex-2 bg-white h-5/6 w-full rounded-md m-5 ml-10">
@@ -53,22 +67,19 @@ function Cart(props){
 	    						</div>
 
 	    						<div class="w-full text-end h-4/6 border-b-2 border-blue-400 mr-10 mt-5">
-	    							<h1 class="m-auto mr-6 mt-6 product-name text-4xl">Items: 2</h1>
+	    							<h1 class="m-auto mr-6 mt-6 product-name text-4xl">Items: {itemCount}</h1>
 	    						</div>
 	    					</div>
 
 	    					<div class="flex overflow-y-scroll flex-col h-full w-full px-10">
-	    						<CartCard/>
-	    						<CartCard/>
-	    						<CartCard/>
-	    						<CartCard/>
+	    						{cart}
 	    					</div>
 	    				</div>
 	    			</div>
 
 	    			<div class="modal-card bg-white flex-1 h-3/6 w-full rounded-md m-5 mr-10">
 	    				<div class="flex-col h-full w-full text-center ">
-	    					<h1 class="m-auto m-4 mx-8 product-name text-5xl">Subtotal: 35345</h1>
+	    					<h1 class="m-auto m-4 mx-8 product-name text-5xl mt-3">Subtotal: {total}</h1>
 	    					<button class="modal-button py-3 text-black rounded-md mt-20 px-12">Pay</button>
 	    				</div>
 	    			</div>
