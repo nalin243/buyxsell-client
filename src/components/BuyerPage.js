@@ -15,27 +15,27 @@ function BuyerPage (props){
     const [loading,updateLoading] = useState(true)
     const [username,updateUsername] = useState("")
  
-    useEffect(()=>{
-        axios.get(process.env.REACT_APP_SERVER_URL+"authcheck",{
-                headers: {
-                    Authorization: localStorage.getItem("userTokenBuyer")
-                }
-            })
-            .then((response)=>{
-                if(!response.data.success)
-                    navigate("/home")
-                else{
-                    updateUsername(response.data.user)
-                    updateLoading(false)
-                }
-            })
-            .catch((err)=>{
-                if(err.response.data==="Unauthorized")
-                    navigate("/home")
-            })
-    })
+    // useEffect(()=>{
+    //     axios.get(process.env.REACT_APP_SERVER_URL+"authcheck",{
+    //             headers: {
+    //                 Authorization: localStorage.getItem("userTokenBuyer")
+    //             }
+    //         })
+    //         .then((response)=>{
+    //             if(!response.data.success)
+    //                 navigate("/home")
+    //             else{
+    //                 updateUsername(response.data.user)
+    //                 updateLoading(false)
+    //             }
+    //         })
+    //         .catch((err)=>{
+    //             if(err.response.data==="Unauthorized")
+    //                 navigate("/home")
+    //         })
+    // })
  
-        if(!loading){
+        // if(!loading){
             return(
                 <div class="flex flex-col background-page min-h-screen w-screen flex">
         			<Header user={username} page={"buyerpage"} />
@@ -47,7 +47,7 @@ function BuyerPage (props){
                     <Footer/>
                 </div>
             )
-        }
+        // }
     
     
 }

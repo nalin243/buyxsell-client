@@ -29,7 +29,7 @@ function Header(props){
 				<div class="flex">
 					<img class="justify-start md:mt-2 md:-ml-1 xl:mt-4 xl:ml-7 w-50 h-40" src={logoicon}/>
 					<div class="h-1/2 w-1/2">
-					<h1 class="product-name text-3xl mt-24">Hi, {props.user}</h1>
+					<h1 class="product-name text-4xl mt-24">Welcome, {props.user}</h1>
 					</div>
 					<div class="flex pt-14 text-center justify-end w-full">
 						<button onClick={()=>{
