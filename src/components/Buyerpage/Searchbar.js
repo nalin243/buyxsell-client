@@ -6,7 +6,7 @@ function SearchBar(props) {
                 <input onClick={()=>{
                     document.getElementById("search-area").classList.toggle("hidden")
                     document.getElementById("search-bar").classList.toggle("hidden")
-                }}type="search" class="flex bg-white 200 w-full p-4 pl-4 rounded-lg placeholder-gray-400" placeholder="Search Products..." required/>
+                }}type="search" class="flex bg-white 200 w-full p-4 pl-4 rounded-lg placeholder-gray-400" placeholder="Start Searching..." required/>
         </div>
     </div>
     )

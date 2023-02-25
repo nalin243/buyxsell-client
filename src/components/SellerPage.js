@@ -13,7 +13,6 @@ function SellerPage(props) {
     const [loading,updateLoading] = useState(true)
 
     useEffect(()=>{
-        if(!props.loginStatus){
                 axios.get(process.env.REACT_APP_SERVER_URL+"authcheck",{
                 headers: {
                     Authorization: localStorage.getItem("userTokenSeller")
@@ -31,10 +30,6 @@ function SellerPage(props) {
                 if(err.response.data==="Unauthorized")
                     navigate("/home")
             })
-        }
-        else {
-            updateLoading(false)
-        }
     })
 
         if(!loading){

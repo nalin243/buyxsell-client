@@ -113,18 +113,17 @@ input:focus {
 }
 
 .stage-area {
-	background-color: #48A5BA;
-	border-radius: 20px;
-	box-shadow: 0px 0px 50px 1px #48A5BA;
+	background-color: #ffffff;
+	border-radius: 10px;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
 .stage-input {
 	background: #FFFFFF;
 	border-radius: 20px;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	box-shadow: -15px 15px 30px rgba(0, 0, 0, 0.25);
 }
 
 .item-card {
-/*	background-color:#48A5BA;*/
 	background-color:#FFF5EE;
 }
