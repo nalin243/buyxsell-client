@@ -25,8 +25,9 @@ function SearchArea(props){
 				}
 			})
 
-			document.getElementById("searchiconbuyer").addEventListener("keypress",(event)=>{
+			document.getElementById("searchbuyer").addEventListener("keypress",(event)=>{
 				if(event.key==="Enter"){
+					const searchTerm = (document.getElementById("searchbuyer").value).toLowerCase()
 					axios.get(process.env.REACT_APP_SERVER_URL+"shop",{
 						headers:{
 							Authorization: localStorage.getItem("userTokenBuyer")
@@ -35,7 +36,10 @@ function SearchArea(props){
 						.then((response)=>{
 							if(response.data.success){
 								updateShop((response.data.shop).map((item)=>{
-									return <ItemCard comploc={"buyer"} sellername={item.sellername} user={props.user} name={item.name} price={item.price} description={item.description}/>
+									const itemName = (item.name).toLowerCase()
+									
+									if(itemName.includes(searchTerm))
+										return <ItemCard comploc={"buyer"} sellername={item.sellername} user={props.user} name={item.name} price={item.price} description={item.description}/>
 								}))
 							}
 						})
@@ -52,7 +56,7 @@ function SearchArea(props){
 						document.getElementById("search-area").classList.toggle("hidden")
 						document.getElementById("search-bar").classList.toggle("hidden")
 					}} class="hover:cursor-pointer ml-7 mt-7 h-10 w-10" src={backicon}></img>
-					<input id="searchiconbuyer" type="search" placeholder="Search for products..." class="placeholder-gray-800 border-b-4 rounded-sm border-black bg-transparent w-full mt-5 ml-4"/>
+					<input id="searchbuyer" type="search" placeholder="Search for products..." class="placeholder-gray-800 border-b-4 rounded-sm border-black bg-transparent w-full mt-5 ml-4"/>
 					<img  src={searchicon} class="h-10 w-10 hover:cursor-pointer -ml-10 mt-5 mr-12"/>
 			</div>
 			<div class="relative flex overflow-y-scroll flex-wrap h-screen w-screen">
