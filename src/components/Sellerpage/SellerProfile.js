@@ -26,7 +26,7 @@ function SellerProfile(props) {
 
     return ( 
         <div class="flex overflow-hidden w-full h-full">
-            <div class="flex sellerpage-bg flex-col xl:w-2/12 md:w-2/6 h-full">
+            <div class="flex sellerpage-bg bg-white flex-col xl:w-2/12 md:w-2/6 h-full">
                 
                 <div class="flex-1 mt-10 mb-10 w-full h-full">
                     <div class="flex flex-col h-full w-full">
@@ -34,7 +34,7 @@ function SellerProfile(props) {
                             <img class="m-auto -mt-12 scale-50" src={pfpicon}></img>
                         </div>
                         <div class="flex -mt-20 p-3 justify-center">
-                            <h1 class="dashboard-text">{props.user}</h1>
+                            <h1 class="dashboard-text text-black">{props.user}</h1>
                         </div>
                     </div>            
                 </div>
@@ -49,7 +49,7 @@ function SellerProfile(props) {
                                 <img class="m-auto h-8 w-8" src={dashicon}></img>
                             </div>
                             <div class="flex justify-center h-full w-full">
-                                <h2 class="nav-items m-auto -ml-10 text-white text-xl">Dashboard</h2>
+                                <h2 class="nav-items m-auto -ml-9 text-black text-xl">Dashboard</h2>
                             </div>
                         </div>
 
@@ -60,7 +60,7 @@ function SellerProfile(props) {
                                 <img class="m-auto h-10 w-10" src={dealicon}></img>
                             </div>
                             <div class="flex justify-center h-full w-full">
-                                <h2 class="nav-items m-auto -ml-9 text-white text-xl">Deals</h2>
+                                <h2 class="nav-items m-auto -ml-8 text-black text-xl">Deals</h2>
                             </div>
                         </div>
 
@@ -71,7 +71,7 @@ function SellerProfile(props) {
                                 <img class="m-auto h-10 w-10" src={settingicon}></img>
                             </div>
                             <div class="flex justify-center h-full w-full">
-                                <h2 class="nav-items m-auto -ml-9 text-white text-xl">Settings</h2>
+                                <h2 class="nav-items m-auto -ml-8 text-black text-xl">Settings</h2>
                             </div>
                         </div>
 
@@ -82,7 +82,7 @@ function SellerProfile(props) {
                                 <img class="m-auto h-10 w-10" src={feedbackicon}></img>
                             </div>
                             <div class="flex justify-center h-full w-full">
-                                <h2 class="nav-items m-auto -ml-9 text-white text-xl">Feedback</h2>
+                                <h2 class="nav-items m-auto -ml-8 text-black text-xl">Feedback</h2>
                             </div>
                         </div>
 

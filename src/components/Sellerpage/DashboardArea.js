@@ -48,7 +48,7 @@ function DashboardArea(props){
                         </div>
                     </div>
                     <div class="flex h-full w-full">
-                        <button class="modal-button bg-white text-black rounded-md px-14 py-3 m-auto mt-5">UPLOAD IMAGE</button>
+                        <button class="modal-button bg-black text-white rounded-md px-14 py-3 m-auto mt-5">UPLOAD IMAGE</button>
                     </div>
                 </div>
                 <div class="flex flex-col mr-20 h-full w-full">
@@ -66,10 +66,10 @@ function DashboardArea(props){
                     </div>
                     <div class="flex flex-row h-full w-full">
                         <div class="flex h-full w-full">
-                            <button class="modal-button bg-white text-black rounded-md px-14 py-3 m-auto">SAVE</button>
+                            <button class="modal-button bg-black text-white rounded-md px-14 py-3 m-auto">SAVE</button>
                         </div>
                         <div class="flex h-full w-full">
-                            <button id="sell-button" class="modal-button bg-white text-black rounded-md px-14 py-3 m-auto">SELL</button>
+                            <button id="sell-button" class="modal-button bg-black text-white rounded-md px-14 py-3 m-auto">SELL</button>
                         </div>
                     </div>
                 </div>
