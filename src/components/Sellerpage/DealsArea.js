@@ -18,11 +18,11 @@ function DealsArea(props){
             }
         })
         .then((response)=>{
-            updateTotalItemsSold(response.data.length)
-            updateTotalSales(response.data.reduce((sum,item)=>{
+            updateTotalItemsSold(response.data.result.length)
+            updateTotalSales(response.data.result.reduce((sum,item)=>{
                 return sum+item.price
             },0))
-            updateDeals((response.data).map((item)=>{
+            updateDeals((response.data.result).map((item)=>{
                 return <ItemCard comploc={"seller"} name={item.name} description={item.description} soldto={item.soldto} price={item.price} />
             })) 
         })
