@@ -12,19 +12,19 @@ function ItemCard(props){
 				</div>
 
 				<div class="text-center">
-					<h1 class="product-name text-black text-2xl m-auto mb-7 font-extrabold">Test item 1</h1>
+					<h1 class="product-name text-black text-2xl m-auto mb-1 font-extrabold">{props.name}</h1>
 				</div>
 
-				<div class=" w-full h-full">
-					<div class="overflow-y-scroll">
-						<h1 class="product-name text-black text-2xl ml-2 mt-2 px-5 font-normal">Item description test. This is an extremely great item that you will want to buy as soon as possible</h1>
+				<div class="flex flex-col w-full h-full">
+					<div class="m-auto text-start h-3/6 w-5/6 overflow-hidden">
+						<h1 class="product-name text-black text-2xl ml-2 mt-2 px-5 font-normal">{props.description}</h1>
 					</div>
 
 					<div class="text-center">
-						<h1 class="product-name font-black text-2xl mt-6 -mb-6">Rs 100,000</h1>
+						<h1 class="product-name font-black text-2xl mb-2">Rs {props.price}</h1>
 					</div>
 
-					<div class="flex justify-center mt-10">
+					<div class="flex justify-center mt-2 mb-5">
 						<div class="flex hover:cursor-pointer justify-end bg-black -mt-2 py-3 rounded-md w-3/6 ">
 							<h1 class="mr-4 text-white">Add to cart</h1>
 							<img class="h-6 w-6 mr-8" src={carticon}/>
