@@ -23,12 +23,12 @@ function Cart(props){
                 }
             })
             .then((response)=>{
+            	updateUser(response.data.user)
                 if(!response.data.success)
                     navigate("/home")
                 else{
-                    updateUser(response.data.user)
                     updateLoading(false)
-                      axios.get(process.env.REACT_APP_SERVER_URL+"cart?user="+response.data.user,{
+                    axios.get(process.env.REACT_APP_SERVER_URL+"cart?user="+response.data.user,{
                     	headers: {
                     		Authorization: localStorage.getItem("userTokenBuyer")
                     	}
@@ -40,7 +40,7 @@ function Cart(props){
                     				return total+item.price
                     			},0) )
                     			updateCart((response.data.cart).map((item)=>{
-                    				return <CartCard name={item.name} price={item.price} description={item.description}/>
+                    				return <CartCard updateItemCount={updateItemCount} updateTotal={updateTotal} updateCart={updateCart} user={response.data.user} id={item._id} name={item.name} price={item.price} description={item.description}/>
                     			}))
                     		}
                     	})
@@ -58,7 +58,7 @@ function Cart(props){
     		<Header user={user} page={"cartpage"}/>
 	    		<div class="flex justify-center h-screen w-screen mt-10">
 
-	    			<div class="modal-card flex-2 bg-white h-5/6 w-full rounded-md m-5 ml-10">
+	    			<div class="modal-card flex bg-white h-5/6 w-9/12 rounded-md m-5 ml-10">
 	    				<div class="flex flex-col h-full w-full">
 	    					<div class="flex h-2/6 w-full">
 	    						<div class="flex text-start w-full h-4/6 border-b-2 border-blue-400 ml-10 mt-5">
@@ -77,8 +77,8 @@ function Cart(props){
 	    				</div>
 	    			</div>
 
-	    			<div class="modal-card bg-white flex-1 h-3/6 w-full rounded-md m-5 mr-10">
-	    				<div class="flex-col h-full w-full text-center ">
+	    			<div class="modal-card bg-white flex h-3/6 w-2/12 rounded-md m-5 mr-10">
+	    				<div id="carddelbuttondiv" class="flex-col h-full w-full text-center ">
 	    					<h1 class="m-auto m-4 mx-8 product-name text-5xl mt-3">Subtotal: {total}</h1>
 	    					<button class="modal-button py-3 text-black rounded-md mt-20 px-12">Pay</button>
 	    				</div>
